@@ -1,0 +1,14 @@
+{
+  "name": "sossbar-ai",
+  "owner": {
+    "name": "D5ng"
+  },
+  "description": "sossbar 팀의 웹 서비스 기획·UX 리서치·디자인 하네스",
+  "plugins": [
+    {
+      "name": "sossbar",
+      "source": "./",
+      "description": "웹 서비스 기획, UX 리서치, 디자인 시스템, UI 명세와 개발 인계까지 추적 가능한 문서를 만드는 스킬·에이전트 모음"
+    }
+  ]
+}

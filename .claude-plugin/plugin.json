@@ -1,0 +1,25 @@
+{
+  "name": "sossbar",
+  "description": "웹 서비스 기획, UX 리서치, 디자인 시스템, UI 명세와 개발 인계까지 추적 가능한 문서를 만드는 스킬·에이전트 모음",
+  "author": {
+    "name": "D5ng"
+  },
+  "repository": "https://github.com/D5ng/sossbar-ai-exercise",
+  "keywords": ["planning", "ux-research", "design-system", "product-design"],
+  "skills": [
+    "./skills/planning/",
+    "./skills/research/",
+    "./skills/design/"
+  ],
+  "agents": [
+    "./agents/planning/product-manager.md",
+    "./agents/planning/spec-reviewer.md",
+    "./agents/research/ux-researcher.md",
+    "./agents/design/design-director.md",
+    "./agents/design/design-system-designer.md",
+    "./agents/design/product-ui-designer.md",
+    "./agents/design/ux-writer.md",
+    "./agents/design/accessibility-reviewer.md",
+    "./agents/design/design-reviewer.md"
+  ]
+}
