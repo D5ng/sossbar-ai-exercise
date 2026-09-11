@@ -1,61 +1,125 @@
-# sossbar — 기획·리서치·디자인 하네스
+# sossbar 기획·디자인 도우미
 
-웹 서비스의 기획서, IA, 유저 플로우, 정책서, UX 리서치 계획, 디자인 시스템, UI 명세, 개발 인계 문서를 Claude가 **정해진 순서와 형식으로** 만들어 주는 Claude Code 스킬·에이전트 모음입니다. 개발 지식 없이 말로 요청하면 됩니다.
+> 웹 서비스의 **기획서, IA, 유저 플로우, 정책서, 리서치 계획, 디자인 시스템, 화면 명세**를 AI가 정해진 형식과 순서로 만들어 주는 도구 모음입니다.
+> 개발 지식이 없어도 괜찮습니다. 설치한 뒤에는 평소 말투로 요청하면 됩니다.
 
-## 설치
+## 목차
 
-### 방법 1. 플러그인으로 설치 (권장)
+1. [시작 전에 확인하기](#1-시작-전에-확인하기)
+2. [Claude에 설치하기](#2-claude에-설치하기)
+3. [Codex에 설치하기](#3-codex에-설치하기)
+4. [사용하기](#4-사용하기)
+5. [업데이트하기](#5-업데이트하기)
 
-어느 프로젝트 폴더에서나 쓸 수 있고, 이 저장소가 바뀌면 업데이트만 받으면 됩니다.
+---
 
-1. 마켓플레이스를 등록합니다. 처음 한 번만 하면 됩니다.
+## 1. 시작 전에 확인하기
 
-   ```bash
-   claude plugin marketplace add D5ng/sossbar-ai-exercise
-   ```
+**어떤 AI 도구를 쓰시나요?** 쓰는 도구에 맞는 순서만 따라 하면 됩니다.
 
-2. 플러그인을 설치합니다.
+| 쓰는 도구 | 따라 할 순서 |
+| --- | --- |
+| Claude (Claude 데스크톱 앱의 Code 탭, Claude Code) | 2번 → 4번 |
+| Codex (ChatGPT 데스크톱 앱의 Codex, Codex CLI) | 3번 → 4번 |
 
-   ```bash
-   claude plugin install sossbar@sossbar-ai
-   ```
+> 💡 **터미널이 처음이어도 괜찮습니다.** 설치 명령어는 둘 중 편한 방법으로 실행하세요.
+>
+> - **AI에게 부탁하기 (추천)**: Claude나 Codex 입력창에 "터미널에서 아래 명령어를 실행해줘"라고 쓰고, 명령어를 붙여 넣습니다.
+> - **직접 실행하기**: Mac에서 `Command + Space`를 누르고 "터미널"을 검색해 엽니다. 명령어를 붙여 넣고 `Enter`를 누릅니다.
 
-3. Claude를 다시 시작합니다. 입력창에 `/`를 입력했을 때 `sossbar:`로 시작하는 스킬이 보이면 설치가 끝난 것입니다.
+---
 
-터미널이 익숙하지 않다면 Claude 데스크톱 앱의 Code 탭에서 Claude에게 "터미널에서 `claude plugin marketplace add D5ng/sossbar-ai-exercise` 실행해줘"라고 요청하면 대신 실행합니다. 설치한 뒤에는 입력창 옆 **+ → Plugins**에서 켜고 끄거나 삭제할 수 있습니다.
+## 2. Claude에 설치하기
 
-업데이트를 받을 때는 아래를 실행한 뒤 Claude를 다시 시작합니다.
+### 1단계 · 마켓플레이스 등록 (처음 한 번만)
 
 ```bash
-claude plugin marketplace update sossbar-ai
-claude plugin update sossbar@sossbar-ai
+claude plugin marketplace add D5ng/sossbar-ai-exercise
 ```
 
-### 방법 2. 폴더를 그대로 열기
+✔ `Successfully added marketplace: sossbar-ai`가 보이면 성공입니다.
 
-1. `git clone https://github.com/D5ng/sossbar-ai-exercise.git`으로 받거나, GitHub의 **Code → Download ZIP**으로 내려받습니다.
-2. Claude 데스크톱 앱의 Code 탭에서 이 폴더를 엽니다.
-3. 스킬이 보이지 않으면 Claude에게 "스킬 링크 다시 만들어줘"라고 요청합니다. `scripts/link-skills.sh`가 실행됩니다.
+### 2단계 · 플러그인 설치
 
-이 방법은 이 폴더 안에서만 쓸 수 있습니다. 방법 1과 함께 쓰면 같은 스킬이 두 번 보이므로 하나만 사용하세요.
+```bash
+claude plugin install sossbar@sossbar-ai
+```
 
-## 이렇게 요청하세요
+✔ `Successfully installed plugin: sossbar@sossbar-ai`가 보이면 성공입니다.
 
-| 역할 | 요청 예시 |
+### 3단계 · Claude 다시 시작
+
+Claude를 완전히 종료했다가 다시 엽니다.
+
+**설치 확인**: 입력창에 `/`를 입력했을 때 `sossbar:`로 시작하는 항목이 보이면 끝입니다.
+플러그인을 켜고 끄거나 삭제하려면 입력창 옆 **+ → Plugins**를 누릅니다.
+
+---
+
+## 3. Codex에 설치하기
+
+### 1단계 · 마켓플레이스 등록 (처음 한 번만)
+
+```bash
+codex plugin marketplace add D5ng/sossbar-ai-exercise
+```
+
+✔ ``Added marketplace `sossbar-ai` ``가 보이면 성공입니다.
+
+### 2단계 · 플러그인 설치
+
+```bash
+codex plugin add sossbar@sossbar-ai
+```
+
+✔ ``Added plugin `sossbar` from marketplace `sossbar-ai` ``가 보이면 성공입니다.
+
+### 3단계 · 에이전트 복사 (Codex만 필요)
+
+Codex는 플러그인 안의 에이전트를 자동으로 불러오지 않습니다. 아래 명령어로 에이전트 설정을 Codex 폴더에 복사합니다.
+
+```bash
+mkdir -p ~/.codex/agents && cp ~/.codex/plugins/cache/sossbar-ai/sossbar/*/.codex/agents/*.toml ~/.codex/agents/
+```
+
+> Windows를 쓰신다면 이 명령어 대신 Codex에게 "sossbar 플러그인의 `.codex/agents` 파일들을 `~/.codex/agents`로 복사해줘"라고 부탁하세요.
+
+### 4단계 · 새 세션 시작
+
+Codex에서 새 세션(새 대화)을 시작합니다.
+
+**설치 확인**: 아래 명령어 결과에 `sossbar@sossbar-ai`와 `installed, enabled`가 보이면 끝입니다.
+
+```bash
+codex plugin list
+```
+
+> ⚠️ **Codex는 에이전트를 스스로 부르지 않습니다.** 에이전트가 필요하면 이름을 넣어 요청하세요.
+> 예: "product-manager 에이전트로 기획해줘"
+
+---
+
+## 4. 사용하기
+
+작업할 폴더를 연 뒤, 평소 말투로 요청하면 됩니다.
+
+### 이렇게 요청해 보세요
+
+| 하고 싶은 일 | 요청 예시 |
 | --- | --- |
-| 기획 | "1인 가구 직장인을 위한 반려동물 산책 대행 서비스 기획해줘" |
-| 기획 | "기획서만 먼저 써줘", "IA 짜줘", "정책서에 회원 탈퇴 규칙 추가해줘" |
-| 기획 | "기획서가 빈약한데 뭘 더 넣으면 좋을까?" |
-| 리서치 | "AS-01 가정을 검증할 인터뷰 질문지 만들어줘" |
-| 리서치 | "인터뷰 메모 정리해줘" + 메모 파일 첨부 |
-| 리서치 | "가입 흐름 사용성 테스트 계획 세워줘" |
-| 디자인 | "이 기획으로 디자인 시스템 만들어줘" |
-| 디자인 | "SCR-03 화면 와이어프레임 그려줘" |
-| 디자인 | "Figma로 시안 만들어줘" (Figma 연결 필요) |
+| 서비스 전체 기획 | "1인 가구 직장인을 위한 반려동물 산책 대행 서비스 기획해줘" |
+| 필요한 문서만 작성 | "기획서만 먼저 써줘", "IA 짜줘", "정책서에 회원 탈퇴 규칙 추가해줘" |
+| 기획서 보강 아이디어 | "기획서가 빈약한데 뭘 더 넣으면 좋을까?" |
+| 인터뷰 준비 | "AS-01 가정을 검증할 인터뷰 질문지 만들어줘" |
+| 인터뷰 결과 정리 | "인터뷰 메모 정리해줘" + 메모 파일 첨부 |
+| 사용성 테스트 | "가입 흐름 사용성 테스트 계획 세워줘" |
+| 디자인 시스템 | "이 기획으로 디자인 시스템 만들어줘" |
+| 화면 설계 | "SCR-03 화면 와이어프레임 그려줘" |
+| 시안 제작 | "Figma로 시안 만들어줘" (Figma 연결 필요) |
 
-"experiments/우리서비스 폴더에 만들어줘"처럼 저장 위치를 지정하면 기존 결과와 섞이지 않습니다.
+> 💡 "experiments/우리서비스 폴더에 만들어줘"처럼 저장 위치를 정하면 다른 결과와 섞이지 않습니다.
 
-## 진행 흐름
+### 작업은 이런 순서로 진행돼요
 
 ```text
 기획 ─ 서비스 기획서 → IA → 유저 플로우 → 정책서
@@ -68,7 +132,7 @@ claude plugin update sossbar@sossbar-ai
        → UI 명세 · 와이어프레임 → 시안 → 접근성 검토 → 개발 인계 → 디자인 검토
 ```
 
-## 문서에 보이는 표시
+### 문서에 보이는 표시
 
 | 표시 | 뜻 | 할 일 |
 | --- | --- | --- |
@@ -77,80 +141,37 @@ claude plugin update sossbar@sossbar-ai
 | 결정 필요 | 선택에 따라 결과가 달라지는 항목 | **답해 주세요** |
 | 확정 | 팀이 결정한 내용 | - |
 
-문서끼리는 번호로 연결됩니다: 문제 `P-01`, 목표 `G-01`, 가정 `AS-01`, 화면 `SCR-01`, 흐름 `F-01`, 정책 `POL-01`, 완료 기준 `AC-01`, 사용성 문제 `UT-01`, 반영 제안 `REC-01`.
+문서끼리는 번호로 연결됩니다. 문제 `P-01`, 목표 `G-01`, 가정 `AS-01`, 화면 `SCR-01`, 흐름 `F-01`, 정책 `POL-01`, 완료 기준 `AC-01`, 사용성 문제 `UT-01`, 반영 제안 `REC-01`.
 
-## 꼭 알아 둘 약속
+### 꼭 알아 둘 약속
 
-- Claude는 모르는 내용을 지어내지 않습니다. 빈칸이나 "결정 필요"가 많으면 정보를 더 알려 주세요.
-- 인터뷰와 사용성 테스트는 사람이 진행합니다. Claude는 계획을 세우고 넘겨받은 기록을 분석합니다.
+- AI는 모르는 내용을 지어내지 않고 **"결정 필요"**로 표시합니다. 표시된 질문에 답해 주세요.
+- 인터뷰와 사용성 테스트는 사람이 진행합니다. AI는 계획을 세우고, 넘겨받은 기록을 분석합니다.
 - 분석 결과는 "제안"으로 나옵니다. "REC-01 반영해줘"처럼 채택한 것만 문서에 반영됩니다.
-- 인터뷰 메모에서 실명과 연락처는 지우고 넘겨 주세요.
-- 스킬·에이전트 파일은 직접 고치지 말고 관리자에게 요청해 주세요.
+- 인터뷰 메모를 넘길 때는 실명과 연락처를 지워 주세요.
 
-## 폴더 구조
+---
 
-```text
-sossbar-agent/
-├─ README.md                        설치 방법 · 사용 가이드
-├─ CLAUDE.md                        Claude Code 진입점 · 사용 안내 · 변경 이력
-├─ AGENTS.md                        공통 원칙 · 역할 · 진행 순서 · 폴더 규칙
-├─ skills/                          스킬 = 어떻게 작업하는지 (폴더마다 SKILL.md)
-│  ├─ planning/                     기획
-│  │  ├─ service-planning           기획 전체 진행 (총괄)
-│  │  ├─ product-brief              서비스 기획서
-│  │  ├─ brief-enrichment           기획서 보강 제안 (선택)
-│  │  ├─ information-architecture   IA · 사이트맵
-│  │  ├─ user-flow                  유저 플로우
-│  │  ├─ policy-spec                정책서
-│  │  ├─ screen-spec                화면 요구사항 정의서
-│  │  ├─ acceptance-criteria        인수 조건
-│  │  └─ tracking-plan              트래킹 플랜
-│  ├─ research/                     UX 리서치
-│  │  ├─ user-interview             사용자 인터뷰
-│  │  └─ usability-test             사용성 테스트
-│  └─ design/                       디자인
-│     ├─ product-design             디자인 전체 진행 (총괄)
-│     ├─ design-brief               디자인 브리프 · 원칙
-│     ├─ ux-writing-system          UX 라이팅
-│     ├─ design-foundations         디자인 토큰
-│     ├─ component-spec             컴포넌트 명세
-│     ├─ product-ui-design          UI 명세 · 와이어프레임
-│     ├─ visual-ui-production       Figma 시안 · 프로토타입
-│     ├─ accessibility-review       접근성 검토
-│     ├─ design-handoff             개발 인계
-│     └─ design-review              디자인 정합성 검토
-├─ agents/                          에이전트 = 누가 판단하는지 (하위 폴더 없음)
-│  ├─ product-manager.md            기획 · PM · PO 통합
-│  ├─ spec-reviewer.md              기획 · 기획 검토
-│  ├─ ux-researcher.md              리서치 · UX 리서처
-│  ├─ design-director.md            디자인 · 방향 조율
-│  ├─ design-system-designer.md     디자인 · 디자인 시스템
-│  ├─ product-ui-designer.md        디자인 · 화면 설계 · 와이어프레임
-│  ├─ ux-writer.md                  디자인 · UX 문구
-│  ├─ accessibility-reviewer.md     디자인 · 접근성 검토
-│  └─ design-reviewer.md            디자인 · 디자인 검토
-├─ references/                      모든 스킬이 참고하는 공통 문서
-│  ├─ planning-principles.md        기획 원칙 · 식별자 · 그림 규칙
-│  ├─ web-service-checklist.md      웹 서비스 공통 점검 목록
-│  ├─ service-context.md            서비스 기본 정보
-│  ├─ glossary.md                   용어 사전
-│  ├─ product-design-handoff.md     기획 · 디자인 · 개발 인계 규칙
-│  ├─ design-principles.md          디자인 원칙
-│  ├─ design-context.md             디자인 기본 정보
-│  └─ design-system-references.md   외부 디자인 시스템 참고 기준
-├─ scripts/
-│  └─ link-skills.sh                스킬 인식용 링크 생성
-├─ .claude-plugin/                  플러그인 · 마켓플레이스 설정
-├─ .claude/                         Claude Code 연결용 링크 (자동 생성)
-├─ .agents/                         Codex용 스킬 사본
-└─ .codex/                          Codex용 에이전트 설정
+## 5. 업데이트하기
+
+담당자가 업데이트를 알리면 쓰는 도구에 맞게 실행한 뒤, 앱을 다시 시작하세요.
+
+### Claude
+
+```bash
+claude plugin marketplace update sossbar-ai
+claude plugin update sossbar@sossbar-ai
 ```
 
-## 관리자용: 스킬·에이전트를 바꿀 때
+### Codex
 
-- 스킬은 역할별 그룹 폴더(`planning/`, `research/`, `design/`)에 둡니다. 새 그룹 폴더를 만들면 `.claude-plugin/plugin.json`의 `skills` 목록에 추가합니다.
-- 스킬을 추가·이동·삭제하면 `bash scripts/link-skills.sh`를 실행합니다.
-- 에이전트는 `agents/` 바로 아래에 둡니다. 플러그인은 하위 폴더의 에이전트를 인식하지 못합니다.
-- Codex 사본(`.agents/skills`, `.codex/agents`)도 함께 갱신합니다.
-- 올리기 전에 `claude plugin validate .`로 설정을 검사합니다.
-- 규칙과 변경 이력은 `AGENTS.md`, `CLAUDE.md`에 기록합니다. 플러그인 사용자에게는 이 두 파일이 읽히지 않으므로, 모든 스킬이 지켜야 하는 규칙은 스킬 본문이나 `references/`에 둡니다.
+```bash
+codex plugin marketplace upgrade sossbar-ai
+codex plugin add sossbar@sossbar-ai
+```
+
+그다음 [3단계 · 에이전트 복사](#3단계--에이전트-복사-codex만-필요) 명령어를 한 번 더 실행합니다.
+
+---
+
+문의: [GitHub 저장소](https://github.com/D5ng/sossbar-ai-exercise) · 담당 D5ng
