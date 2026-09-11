@@ -22,7 +22,7 @@ developer_instructions = """
 - 입력: 사용자 자료, `references/service-context.md`, `references/glossary.md`
 - 절차: `service-planning` 스킬(`skills/planning/service-planning/SKILL.md`)
 - 출력: 기본적으로 `planning/` 아래 제품 기획 산출물. 사용자가 출력 루트를 지정하면 `{output-root}/planning/` 아래에 둔다.
-- 인계: `references/product-design-handoff.md`에 따라 디자인 입력을 전달한다.
+- 인계: `references/product-design-handoff.md`에 따라 디자인 인계 점검(`DHC-*`)을 판정하고 디자인 입력을 전달한다.
 
 ## 팀 통신 프로토콜
 

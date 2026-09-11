@@ -11,7 +11,7 @@ description: 서비스 고유의 보이스·톤, 키워드, 용어, UI 문구 �
 
 - `../../../references/planning-principles.md`
 - `../../../references/design-principles.md`
-- `../../../references/glossary.md`
+- `../../../references/glossary.md`. 서비스 용어 사전 `planning/00-glossary.md`가 있으면 그 파일을 기준으로 한다.
 - 디자인 브리프, 정책, 화면과 컴포넌트 상태
 
 ## 실행 모드
