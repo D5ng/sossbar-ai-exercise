@@ -119,19 +119,16 @@ sossbar-agent/
 │     ├─ accessibility-review       접근성 검토
 │     ├─ design-handoff             개발 인계
 │     └─ design-review              디자인 정합성 검토
-├─ agents/                          에이전트 = 누가 판단하는지
-│  ├─ planning/
-│  │  ├─ product-manager.md         PM · PO 통합
-│  │  └─ spec-reviewer.md           기획 검토
-│  ├─ research/
-│  │  └─ ux-researcher.md           UX 리서처
-│  └─ design/
-│     ├─ design-director.md         디자인 방향 조율
-│     ├─ design-system-designer.md  디자인 시스템
-│     ├─ product-ui-designer.md     화면 설계 · 와이어프레임
-│     ├─ ux-writer.md               UX 문구
-│     ├─ accessibility-reviewer.md  접근성 검토
-│     └─ design-reviewer.md         디자인 검토
+├─ agents/                          에이전트 = 누가 판단하는지 (하위 폴더 없음)
+│  ├─ product-manager.md            기획 · PM · PO 통합
+│  ├─ spec-reviewer.md              기획 · 기획 검토
+│  ├─ ux-researcher.md              리서치 · UX 리서처
+│  ├─ design-director.md            디자인 · 방향 조율
+│  ├─ design-system-designer.md     디자인 · 디자인 시스템
+│  ├─ product-ui-designer.md        디자인 · 화면 설계 · 와이어프레임
+│  ├─ ux-writer.md                  디자인 · UX 문구
+│  ├─ accessibility-reviewer.md     디자인 · 접근성 검토
+│  └─ design-reviewer.md            디자인 · 디자인 검토
 ├─ references/                      모든 스킬이 참고하는 공통 문서
 │  ├─ planning-principles.md        기획 원칙 · 식별자 · 그림 규칙
 │  ├─ web-service-checklist.md      웹 서비스 공통 점검 목록
@@ -151,9 +148,9 @@ sossbar-agent/
 
 ## 관리자용: 스킬·에이전트를 바꿀 때
 
-- 스킬과 에이전트는 역할별 그룹 폴더(`planning/`, `research/`, `design/`)에 둡니다.
+- 스킬은 역할별 그룹 폴더(`planning/`, `research/`, `design/`)에 둡니다. 새 그룹 폴더를 만들면 `.claude-plugin/plugin.json`의 `skills` 목록에 추가합니다.
 - 스킬을 추가·이동·삭제하면 `bash scripts/link-skills.sh`를 실행합니다.
-- 에이전트를 추가·이동·삭제하면 `.claude-plugin/plugin.json`의 `agents` 목록도 고칩니다. 새 스킬 그룹 폴더는 `skills` 목록에 추가합니다.
+- 에이전트는 `agents/` 바로 아래에 둡니다. 플러그인은 하위 폴더의 에이전트를 인식하지 못합니다.
 - Codex 사본(`.agents/skills`, `.codex/agents`)도 함께 갱신합니다.
 - 올리기 전에 `claude plugin validate .`로 설정을 검사합니다.
 - 규칙과 변경 이력은 `AGENTS.md`, `CLAUDE.md`에 기록합니다. 플러그인 사용자에게는 이 두 파일이 읽히지 않으므로, 모든 스킬이 지켜야 하는 규칙은 스킬 본문이나 `references/`에 둡니다.

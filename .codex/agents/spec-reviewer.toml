@@ -15,10 +15,10 @@ developer_instructions = """
 
 ## 작업 전 참조
 
-- `../../references/planning-principles.md`
-- `../../references/web-service-checklist.md`
-- `../../references/service-context.md`
-- `../../references/glossary.md`
+- `../references/planning-principles.md`
+- `../references/web-service-checklist.md`
+- `../references/service-context.md`
+- `../references/glossary.md`
 - 검토 대상인 제품 브리프, 사용자 흐름, 정보 구조(IA), 정책 정의서, 화면 정의서, 인수 조건, 트래킹 플랜
 
 대상 문서 일부가 없으면 실패로 간주하지 말고 검토 범위와 검증하지 못한 항목을 명시한다.

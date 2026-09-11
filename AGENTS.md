@@ -15,8 +15,8 @@
 - 서비스 기획 전체, MVP 기획, 기능 기획, 기존 기획 수정·보완 요청에는 `skills/planning/service-planning/SKILL.md`를 먼저 읽는다.
 - 사용자가 출력 루트를 지정하면 산출물은 `{output-root}/planning/`에 두며, 기존 `planning/` 결과와 섞지 않는다.
 - 단일 산출물 요청에는 해당 스킬만 사용한다.
-- PM과 PO의 제품 책임은 `agents/planning/product-manager.md`의 통합 역할로 다룬다.
-- 여러 문서의 정합성 검토가 필요하면 `agents/planning/spec-reviewer.md`를 독립 검토 역할로 사용한다.
+- PM과 PO의 제품 책임은 `agents/product-manager.md`의 통합 역할로 다룬다.
+- 여러 문서의 정합성 검토가 필요하면 `agents/spec-reviewer.md`를 독립 검토 역할로 사용한다.
 - 브리프나 초기 아이디어가 빈약해 무엇을 더 넣을지 제안만 원하면 `skills/planning/brief-enrichment/SKILL.md`를 사용한다. 제안은 원문을 수정하지 않으며, 사용자가 채택한 항목만 `service-planning`의 부분 재실행으로 반영한다.
 
 ### 산출물 순서
@@ -38,7 +38,7 @@
 ## UX 리서치 하네스
 
 - 사용자 인터뷰의 계획·분석에는 `skills/research/user-interview/SKILL.md`, 사용성 테스트의 계획·분석에는 `skills/research/usability-test/SKILL.md`를 사용한다.
-- 리서치 역할은 `agents/research/ux-researcher.md`가 맡는다. 화면을 설계한 사람이 자기 화면의 사용성 테스트를 분석하지 않는다.
+- 리서치 역할은 `agents/ux-researcher.md`가 맡는다. 화면을 설계한 사람이 자기 화면의 사용성 테스트를 분석하지 않는다.
 - 실제 인터뷰와 테스트는 사람이 진행한다. 사용자가 제공한 기록 없이 참가자 응답·행동·결과를 만들지 않는다.
 - 산출물은 `research/` 아래 스터디별 폴더에 둔다. 사용자가 출력 루트를 지정하면 `{output-root}/research/`에 둔다.
 - 결과는 원문을 직접 바꾸지 않고 반영 제안(`REC-*`)으로 돌려준다. 채택한 제안만 `service-planning` 또는 `product-design`의 부분 재실행으로 반영한다.
@@ -53,9 +53,9 @@
 - 디자인 시스템 구축, 서비스 키워드·디자인 원칙 정의, UX 라이팅, 실제 UI 설계, 디자인 개발 인계 요청에는 `skills/design/product-design/SKILL.md`를 먼저 읽는다.
 - 사용자가 하나의 문서 초안만 명시적으로 요청하고 기존 공통 시스템에 영향을 주지 않을 때만 해당 전용 스킬을 직접 사용한다. 공유 토큰·컴포넌트 변경, 실제 제품 UI 설계처럼 다른 산출물의 영향 확인이 필요한 작업은 `product-design`의 부분 재실행으로 처리한다.
 - 외부 디자인 시스템은 `references/design-system-references.md`의 경계에 따라 구조와 의사결정 방식을 참고하고, 우리 서비스의 결정으로 그대로 복제하지 않는다.
-- 시스템 구축은 `agents/design/design-system-designer.md`, 실제 화면 구성은 `agents/design/product-ui-designer.md`가 책임진다.
-- `agents/design/ux-writer.md`는 시스템과 화면에서 공유한다.
-- 접근성 검토와 최종 정합성 검토는 각각 `agents/design/accessibility-reviewer.md`, `agents/design/design-reviewer.md`가 원문을 수정하지 않고 수행한다.
+- 시스템 구축은 `agents/design-system-designer.md`, 실제 화면 구성은 `agents/product-ui-designer.md`가 책임진다.
+- `agents/ux-writer.md`는 시스템과 화면에서 공유한다.
+- 접근성 검토와 최종 정합성 검토는 각각 `agents/accessibility-reviewer.md`, `agents/design-reviewer.md`가 원문을 수정하지 않고 수행한다.
 
 ### 산출물 순서
 
@@ -79,23 +79,24 @@ skills/
 ├─ planning/ ─ 기획 스킬 9개
 ├─ research/ ─ 사용자 인터뷰, 사용성 테스트
 └─ design/ ─ 디자인 스킬 10개
-agents/
-├─ planning/ ─ product-manager, spec-reviewer
-├─ research/ ─ ux-researcher
-└─ design/ ─ 디자인 에이전트 6개
+agents/ ─ 에이전트 9개, 하위 폴더 없이 한곳에 둔다
 .claude/skills/ ─ 스킬별 링크, scripts/link-skills.sh로 생성
 .claude-plugin/ ─ 플러그인·마켓플레이스 설정
 .agents/skills/ ─ Codex용 평면 사본
 ```
 
+| 역할 | 에이전트 |
+| --- | --- |
+| 기획 | `product-manager`, `spec-reviewer` |
+| 리서치 | `ux-researcher` |
+| 디자인 | `design-director`, `design-system-designer`, `product-ui-designer`, `ux-writer`, `accessibility-reviewer`, `design-reviewer` |
+
 - 이 저장소는 폴더로 열어 쓰거나 Claude Code 플러그인(`sossbar`)으로 설치해 쓴다. 설치 방법은 `README.md`에 있다.
 - 플러그인으로 설치하면 `CLAUDE.md`와 `AGENTS.md`는 읽히지 않는다. 모든 스킬이 반드시 지켜야 하는 규칙은 스킬 본문이나 `references/`에 둔다.
-- 에이전트를 추가·이동·삭제하면 `.claude-plugin/plugin.json`의 `agents` 목록도 고친다. 플러그인은 에이전트를 하위 폴더에서 자동으로 찾지 않는다. 새 스킬 그룹 폴더를 만들면 `skills` 목록에도 추가한다.
-- 에이전트와 스킬이 다른 스킬을 가리킬 때는 스킬 이름을 함께 쓴다. 플러그인으로 설치된 환경에서는 루트 기준 경로가 사용자 프로젝트에 없으므로 이름으로 스킬을 찾는다.
-
 - Claude Code는 `.claude/skills/<스킬 이름>/SKILL.md` 평면 구조만 인식한다. 스킬을 추가·이동·삭제하면 `scripts/link-skills.sh`를 실행해 링크를 다시 만든다.
-- 에이전트는 하위 폴더에 있어도 인식된다. 에이전트의 식별은 파일 위치가 아니라 frontmatter의 `name`으로 하므로 이름이 겹치지 않게 한다.
-- 새 스킬과 에이전트는 반드시 그룹 폴더(`planning/`, `research/`, `design/` 또는 새 그룹) 안에 둔다.
+- 스킬은 역할별 그룹 폴더(`planning/`, `research/`, `design/` 또는 새 그룹)에 둔다. 새 그룹 폴더를 만들면 `.claude-plugin/plugin.json`의 `skills` 목록에 추가한다.
+- 에이전트는 `agents/` 바로 아래에 둔다. 폴더로 열 때는 하위 폴더도 인식되지만, 플러그인은 `agents/` 바로 아래 파일만 인식하고 `plugin.json`에 에이전트 경로를 등록하는 방식도 동작하지 않았다(Claude Code 2.1.251에서 확인). 에이전트는 frontmatter의 `name`으로 구분하므로 이름이 겹치지 않게 한다.
+- 에이전트와 스킬이 다른 스킬을 가리킬 때는 스킬 이름을 함께 쓴다. 플러그인으로 설치된 환경에서는 루트 기준 경로가 사용자 프로젝트에 없으므로 이름으로 스킬을 찾는다.
 - Codex용 `.agents/skills`는 폴더 그룹 없이 스킬 이름별 사본으로 유지한다. `product-design` 사본만 에이전트 호출 문구 한 줄이 Codex용으로 다르다.
 - `.claude/references`와 `.agents/references`는 `references/`로 가는 링크다. 모든 스킬이 그룹 폴더로 옮겨져 지금은 쓰이지 않지만, 평면 위치에서 `../../references/`를 쓰는 스킬이 생겨도 깨지지 않도록 남겨 둔다.
 - 스킬 안의 상대 경로는 실제 위치 기준으로 쓴다. 그룹 폴더 안의 스킬에서는 `../../../references/`, 같은 그룹 스킬은 `../<스킬>/SKILL.md`다.
