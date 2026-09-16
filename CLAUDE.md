@@ -2,7 +2,7 @@
 
 **목표:** 제품 기획에서 디자인 시스템, 실제 UI와 개발 인계까지 추적 가능한 산출물을 만든다.
 
-**트리거:** 서비스 전체·MVP·기능 기획과 기존 기획 수정·보완에는 `skills/planning/service-planning/SKILL.md`를 사용한다. 브리프나 초기 아이디어가 빈약해 무엇을 더 넣을지 제안만 원하면 `skills/planning/brief-enrichment/SKILL.md`를 사용한다. 사용자 인터뷰와 사용성 테스트의 계획·기록 분석에는 `skills/research/user-interview/SKILL.md`, `skills/research/usability-test/SKILL.md`를 사용한다. 디자인 시스템, 서비스 키워드, UX 라이팅, 제품 UI와 디자인 개발 인계에는 `skills/design/product-design/SKILL.md`를 사용한다. 사용자가 공유 시스템에 영향이 없는 독립 문서 초안 하나만 명시적으로 요청했을 때만 `skills/` 아래 해당 전용 스킬을 직접 사용한다.
+**트리거:** 서비스 전체·MVP·기능 기획과 기존 기획 수정·보완에는 `skills/planning/service-planning/SKILL.md`를 사용한다. 사용자 인터뷰와 사용성 테스트의 계획·기록 분석에는 `skills/research/user-interview/SKILL.md`, `skills/research/usability-test/SKILL.md`를 사용한다. 디자인 시스템, 서비스 키워드, UX 라이팅, 제품 UI와 디자인 개발 인계에는 `skills/design/product-design/SKILL.md`를 사용한다. 사용자가 공유 시스템에 영향이 없는 독립 문서 초안 하나만 명시적으로 요청했을 때만 `skills/` 아래 해당 전용 스킬을 직접 사용한다.
 
 공통 원칙과 역할·산출물 상세는 `AGENTS.md`를 기준으로 한다.
 
@@ -37,3 +37,4 @@
 | 2026-09-11 | Claude Code 플러그인·마켓플레이스 설정과 README 추가, `frontend-design` 우선순위를 디자인 스킬로 이동, 에이전트의 스킬 참조에 이름 병기 | `.claude-plugin/`, `README.md`, `.gitignore`, `skills/design/product-design/`, `skills/design/visual-ui-production/`, `agents/`, `.codex/agents/`, `AGENTS.md` | 팀원이 어느 프로젝트에서나 설치해 쓰게 하고, 플러그인은 `CLAUDE.md`를 읽지 않아서 |
 | 2026-09-11 | 에이전트를 `agents/` 바로 아래로 되돌리고 `plugin.json`의 에이전트 목록 제거 | `agents/`, `.claude-plugin/plugin.json`, `AGENTS.md`, `README.md`, `skills/planning/service-planning/` | 플러그인이 하위 폴더 에이전트와 경로 등록 방식을 인식하지 못해 설치하면 에이전트가 0개로 나와서 |
 | 2026-09-11 | 디자인 인계 점검(`DHC-*`) 추가, 화면 요구사항에 핵심 행동·요소 중요도·데이터 양, IA에 화면 밖 접점(`TP-*`), 서비스 용어 사전 단계, 사용자 ID(`U-*`)와 사용 환경, 테마 점검 항목 추가 | `references/`, `skills/planning/`, `skills/design/product-design/`, `skills/design/ux-writing-system/`, `agents/spec-reviewer.md`, `agents/product-manager.md`, `.codex/agents/`, `.agents/skills/` | 기획을 마치고 디자인을 시작할 때 브랜드·자산·정보 우선순위·데이터 양 같은 입력이 비어 있어 디자이너가 추측하거나 처음부터 다시 물어야 해서 |
+| 2026-09-16 | 기획 파트를 기획서·IA·유저 플로우·화면 요구사항 정의서 4단계로 축소하고 정책은 화면 규칙(`SCR-*-R*`)으로 흡수. `brief-enrichment`, `policy-spec`, `acceptance-criteria`, `tracking-plan` 스킬과 `spec-reviewer` 에이전트 삭제 | `skills/planning/`, `agents/`, `.agents/skills/`, `.codex/agents/`, `references/`, 디자인·리서치 스킬의 기획 참조, `AGENTS.md`, `README.md`, `CLAUDE.md` | 기획 산출물과 규칙이 과도해 실제 작업에 비해 문서 작성·검토 부담이 컸기 때문에 |

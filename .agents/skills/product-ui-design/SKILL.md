@@ -14,7 +14,7 @@ description: 제품 기획과 디자인 시스템을 기반으로 실제 서비�
 - `../../../references/planning-principles.md`
 - `../../../references/design-principles.md`
 - `../../../references/product-design-handoff.md`
-- 관련 사용자 흐름, 정보 구조(IA), 정책, 화면 요구사항과 AC
+- 관련 사용자 흐름, 정보 구조(IA), 화면 요구사항(화면 규칙 포함)
 - 디자인 브리프, Foundation, 컴포넌트와 콘텐츠 가이드
 
 ## 작성 절차
@@ -36,7 +36,7 @@ description: 제품 기획과 디자인 시스템을 기반으로 실제 서비�
 | --- | --- |
 | 사용자 목표 | ... |
 | 진입·종료 | ... |
-| 관련 기획 | F-*, POL-*, SCR-*, AC-* |
+| 관련 기획 | F-*, SCR-*, SCR-*-R* |
 | 적용 원칙 | DP-* |
 
 ## 정보 위계

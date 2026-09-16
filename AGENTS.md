@@ -16,20 +16,15 @@
 - 사용자가 출력 루트를 지정하면 산출물은 `{output-root}/planning/`에 두며, 기존 `planning/` 결과와 섞지 않는다.
 - 단일 산출물 요청에는 해당 스킬만 사용한다.
 - PM과 PO의 제품 책임은 `agents/product-manager.md`의 통합 역할로 다룬다.
-- 여러 문서의 정합성 검토가 필요하면 `agents/spec-reviewer.md`를 독립 검토 역할로 사용한다.
-- 브리프나 초기 아이디어가 빈약해 무엇을 더 넣을지 제안만 원하면 `skills/planning/brief-enrichment/SKILL.md`를 사용한다. 제안은 원문을 수정하지 않으며, 사용자가 채택한 항목만 `service-planning`의 부분 재실행으로 반영한다.
 
 ### 산출물 순서
 
 1. `product-brief` — 서비스 기획서
-   - 선택: `brief-enrichment` — 브리프 보강 제안
-2. `information-architecture` — IA(정보 구조도·사이트맵)
+2. `information-architecture` — IA(정보 구조도·사이트맵, 접근 제어)
 3. `user-flow` — 유저 플로우
-4. `policy-spec` — 정책서
-5. `screen-spec` — 화면 요구사항 정의서(정보·동작·상태. 와이어프레임은 디자이너가 `product-ui-design`에서 그린다)
-6. `acceptance-criteria` — 인수 조건
-7. `tracking-plan` — 트래킹 플랜
-8. `spec-reviewer` — 기획 검토
+4. `screen-spec` — 화면 요구사항 정의서(정보·동작·상태·화면 규칙. 와이어프레임은 디자이너가 `product-ui-design`에서 그린다)
+
+정책서, 인수 조건, 트래킹 플랜, 별도 기획 검토는 만들지 않는다. 권한은 IA 접근 제어에, 입력·상태·저장·삭제·알림 규칙은 화면 정의서의 화면 규칙(`SCR-*-R*`)에 둔다.
 
 스킬 이름, 파일명과 식별자는 연결 구조를 위해 그대로 쓰고, 일반 명칭은 문서 제목과 설명에 함께 적는다.
 
@@ -76,10 +71,10 @@
 
 ```text
 skills/
-├─ planning/ ─ 기획 스킬 9개
+├─ planning/ ─ 기획 스킬 5개
 ├─ research/ ─ 사용자 인터뷰, 사용성 테스트
 └─ design/ ─ 디자인 스킬 10개
-agents/ ─ 에이전트 9개, 하위 폴더 없이 한곳에 둔다
+agents/ ─ 에이전트 8개, 하위 폴더 없이 한곳에 둔다
 .claude/skills/ ─ 스킬별 링크, scripts/link-skills.sh로 생성
 .claude-plugin/ ─ 플러그인·마켓플레이스 설정
 .agents/skills/ ─ Codex용 평면 사본
@@ -87,7 +82,7 @@ agents/ ─ 에이전트 9개, 하위 폴더 없이 한곳에 둔다
 
 | 역할 | 에이전트 |
 | --- | --- |
-| 기획 | `product-manager`, `spec-reviewer` |
+| 기획 | `product-manager` |
 | 리서치 | `ux-researcher` |
 | 디자인 | `design-director`, `design-system-designer`, `product-ui-designer`, `ux-writer`, `accessibility-reviewer`, `design-reviewer` |
 
@@ -106,5 +101,5 @@ agents/ ─ 에이전트 9개, 하위 폴더 없이 한곳에 둔다
 
 - 새로운 서비스나 별도 브랜드는 기존 `planning/`, `design/` 결과를 덮어쓰지 않고 출력 범위를 구분한다.
 - 상위 결정이 바뀌면 `references/product-design-handoff.md`의 변경 영향에 따라 하위 산출물을 확인한다.
-- 향후 개발 하네스는 `design/handoff/`만 단독으로 사용하지 않고 관련 정책, UI 명세, `visual-index.md`, 디자인 파일·노드 식별자, `AC-*`, `EVT-*`와 트래킹 플랜을 함께 입력으로 사용한다.
+- 향후 개발 하네스는 `design/handoff/`만 단독으로 사용하지 않고 관련 화면 요구사항 정의서(화면 규칙 포함), UI 명세, `visual-index.md`, 디자인 파일·노드 식별자를 함께 입력으로 사용한다.
 - 에이전트는 누가 판단하는지, 스킬은 어떻게 작업하는지를 정의한다. 같은 책임의 에이전트나 스킬을 다른 이름으로 중복 생성하지 않는다.
