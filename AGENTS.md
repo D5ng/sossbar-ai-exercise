@@ -22,7 +22,7 @@
 1. `product-brief` — 서비스 기획서
 2. `information-architecture` — IA(정보 구조도·사이트맵, 접근 제어)
 3. `user-flow` — 유저 플로우
-4. `screen-spec` — 화면 요구사항 정의서(정보·동작·상태·화면 규칙. 와이어프레임은 디자이너가 `product-ui-design`에서 그린다)
+4. `screen-spec` — 화면 요구사항 정의서(정보·동작·상태·화면 규칙. 와이어프레임은 디자이너가 `ux-design`에서 그린다)
 
 정책서, 인수 조건, 트래킹 플랜, 별도 기획 검토는 만들지 않는다. 권한은 IA 접근 제어에, 입력·상태·저장·삭제·알림 규칙은 화면 정의서의 화면 규칙(`SCR-*-R*`)에 둔다.
 
@@ -48,7 +48,7 @@
 - 디자인 시스템 구축, 서비스 키워드·디자인 원칙 정의, UX 라이팅, 실제 UI 설계, 디자인 개발 인계 요청에는 `skills/design/product-design/SKILL.md`를 먼저 읽는다.
 - 사용자가 하나의 문서 초안만 명시적으로 요청하고 기존 공통 시스템에 영향을 주지 않을 때만 해당 전용 스킬을 직접 사용한다. 공유 토큰·컴포넌트 변경, 실제 제품 UI 설계처럼 다른 산출물의 영향 확인이 필요한 작업은 `product-design`의 부분 재실행으로 처리한다.
 - 외부 디자인 시스템은 `references/design-system-references.md`의 경계에 따라 구조와 의사결정 방식을 참고하고, 우리 서비스의 결정으로 그대로 복제하지 않는다.
-- 시스템 구축은 `agents/design-system-designer.md`, 실제 화면 구성은 `agents/product-ui-designer.md`가 책임진다.
+- 시스템 구축은 `agents/design-system-designer.md`, 실제 화면 구성은 `agents/ux-designer.md`가 책임진다.
 - `agents/ux-writer.md`는 시스템과 화면에서 공유한다.
 - 접근성 검토와 최종 정합성 검토는 각각 `agents/accessibility-reviewer.md`, `agents/design-reviewer.md`가 원문을 수정하지 않고 수행한다.
 
@@ -58,7 +58,7 @@
 2. `ux-writing-system`의 시스템 모드
 3. `design-foundations`
 4. `component-spec`
-5. `product-ui-design`
+5. `ux-design`
 6. `ux-writing-system`의 화면 모드
 7. 실제 시각 UI 요청 시 `visual-ui-production`
 8. `accessibility-review`
@@ -84,7 +84,7 @@ agents/ ─ 에이전트 8개, 하위 폴더 없이 한곳에 둔다
 | --- | --- |
 | 기획 | `product-manager` |
 | 리서치 | `ux-researcher` |
-| 디자인 | `design-director`, `design-system-designer`, `product-ui-designer`, `ux-writer`, `accessibility-reviewer`, `design-reviewer` |
+| 디자인 | `design-director`, `design-system-designer`, `ux-designer`, `ux-writer`, `accessibility-reviewer`, `design-reviewer` |
 
 - 이 저장소는 폴더로 열어 쓰거나 Claude Code 플러그인(`sossbar`)으로 설치해 쓴다. 설치 방법은 `README.md`에 있다.
 - 플러그인으로 설치하면 `CLAUDE.md`와 `AGENTS.md`는 읽히지 않는다. 모든 스킬이 반드시 지켜야 하는 규칙은 스킬 본문이나 `references/`에 둔다.

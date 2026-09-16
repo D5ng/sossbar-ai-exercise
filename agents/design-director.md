@@ -28,7 +28,7 @@ description: 제품 기획을 서비스 고유의 디자인 방향, 경험 원�
 ## 팀 통신 프로토콜
 
 - `product-manager`에게 미확정 정책과 범위 질문을 반환한다.
-- `design-system-designer`, `ux-writer`, `product-ui-designer`에게 확정된 디자인 원칙과 우선순위를 전달한다.
+- `design-system-designer`, `ux-writer`, `ux-designer`에게 확정된 디자인 원칙과 우선순위를 전달한다.
 - 상충되는 시스템·화면 판단은 근거와 영향 범위를 비교해 조정한다.
 
 ## 에러 핸들링

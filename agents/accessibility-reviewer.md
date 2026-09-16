@@ -27,7 +27,7 @@ description: 디자인 시스템과 제품 UI의 색상 대비, 키보드, 포�
 
 ## 팀 통신 프로토콜
 
-- `product-ui-designer`, `design-system-designer`, `ux-writer`에게 근거와 영향 ID가 있는 발견만 전달한다.
+- `ux-designer`, `design-system-designer`, `ux-writer`에게 근거와 영향 ID가 있는 발견만 전달한다.
 - 정책 결정이 필요한 문제는 `product-manager`에게 질문으로 반환한다.
 
 ## 에러 핸들링

@@ -12,7 +12,7 @@ description: 제품 기획을 기반으로 서비스 키워드, 디자인 원칙
 에이전트 팀을 기본으로 사용한다.
 
 - 디자인 기반 구축: `design-director`, `design-system-designer`, `ux-writer`
-- 제품 UI 설계: `product-ui-designer`, `design-system-designer`, `ux-writer`, 필요 시 `accessibility-reviewer`
+- 제품 UI 설계: `ux-designer`, `design-system-designer`, `ux-writer`, 필요 시 `accessibility-reviewer`
 - 최종 검토: 작성 팀과 분리된 `design-reviewer`
 
 Codex에서 에이전트를 호출할 때는 각 `agents/**/*.md` 정의를 사용하고 `model: "opus"`를 명시한다. 다른 실행 환경에서는 같은 역할 정의와 현재 환경의 고품질 모델을 사용한다. 팀 실행을 지원하지 않으면 메인 에이전트가 동일한 스킬을 순차 실행하되 독립 검토를 완료했다고 표현하지 않는다.
@@ -41,10 +41,10 @@ Codex에서 에이전트를 호출할 때는 각 `agents/**/*.md` 정의를 사�
 | 2 | `ux-writer` + `ux-writing-system` | `design/02-brand-language.md`, `design/06-content-guidelines.md` |
 | 3 | `design-system-designer` + `design-foundations` | `design/system/04-foundations.md` |
 | 4 | `design-system-designer` + `component-spec` | `design/system/05-components/{component-id}.md`, `design/system/gaps.md` |
-| 5 | `product-ui-designer` + `product-ui-design` | `design/ui/{feature}/{screen-id}.md` |
-| 5-1 | `product-ui-designer` + `visual-ui-production` | 실제 디자인 산출물, `design/ui/{feature}/visual-index.md` |
+| 5 | `ux-designer` + `ux-design` | `design/ui/{feature}/{screen-id}.md` |
+| 5-1 | `ux-designer` + `visual-ui-production` | 실제 디자인 산출물, `design/ui/{feature}/visual-index.md` |
 | 6 | `accessibility-reviewer` + `accessibility-review` | `design/reviews/{scope}-accessibility.md` |
-| 7 | `product-ui-designer` + `design-handoff` | `design/handoff/{feature}.md` |
+| 7 | `ux-designer` + `design-handoff` | `design/handoff/{feature}.md` |
 | 8 | `design-reviewer` + `design-review` | `design/reviews/{scope}-design-review.md` |
 
 사용자가 출력 루트를 지정하면 표의 `design/` 앞에 그 경로를 붙인다. 예를 들어 출력 루트가 `experiments/landing`이면 산출물은 `experiments/landing/design/`에 둔다. 출력 루트가 없을 때만 프로젝트 루트의 `design/`을 기본값으로 사용한다. 실험 또는 새 서비스의 산출물은 기존 결과를 덮어쓰지 않는다.
@@ -88,7 +88,7 @@ Codex에서 에이전트를 호출할 때는 각 `agents/**/*.md` 정의를 사�
 
 1. 관련 사용자 흐름, 정보 구조(IA), 화면 요구사항(화면 규칙 포함)을 선택한다.
 2. 기존 디자인 시스템과 콘텐츠 가이드를 읽는다.
-3. `../product-ui-design/SKILL.md`로 UI 문서 명세를 만든다.
+3. `../ux-design/SKILL.md`로 UI 문서 명세를 만든다.
 4. `../ux-writing-system/SKILL.md`의 화면 모드로 실제 문구를 확정하고 UI 명세에 연결한다.
 5. Figma 화면, 시각 시안, 프로토타입이나 실제 UI 제작 요청이면 최종 문구가 연결된 명세를 입력으로 `../visual-ui-production/SKILL.md`를 실행한다.
 6. 시스템에 없는 요구를 `GAP-*`로 기록하고 화면에서 임의 해결하지 않는다.
@@ -99,7 +99,7 @@ Codex에서 에이전트를 호출할 때는 각 `agents/**/*.md` 정의를 사�
 
 1. 이번 실행에서 생성하거나 변경한 시스템·UI 범위가 있으면 `../accessibility-review/SKILL.md`로 접근성 요구를 검토한다.
 2. 근거가 명확한 누락은 작성자가 1회 보완하고, 변경 범위의 접근성을 다시 확인한다.
-3. 실제 제품 UI를 생성하거나 변경했으면 `product-ui-designer`가 `../design-handoff/SKILL.md`로 개발 인계 초안을 만든다. 디자인 시스템만 구축한 경우에는 생략한다.
+3. 실제 제품 UI를 생성하거나 변경했으면 `ux-designer`가 `../design-handoff/SKILL.md`로 개발 인계 초안을 만든다. 디자인 시스템만 구축한 경우에는 생략한다.
 4. 둘 이상의 연관 문서를 만들었으면 `../design-review/SKILL.md` 기준으로 독립 검토한다.
 5. 객관적인 누락·오기·연결 문제는 작성자가 최대 1회 수정하고 관련 검토를 다시 실행한다.
 6. 공백과 리뷰 상태를 반영해 개발 인계의 준비 상태를 `Ready for Dev` 또는 `Blocked`로 확정한다. 미해결 Blocker/Major 공백은 `Blocked`다.
@@ -110,7 +110,7 @@ Codex에서 에이전트를 호출할 때는 각 `agents/**/*.md` 정의를 사�
 실제 UI, 시각 시안 또는 프로토타입이 있고 사용자가 설계 검증을 원하면 `usability-test` 스킬(`skills/research/usability-test/SKILL.md`)로 테스트를 계획한다.
 
 - 테스트는 사람이 진행한다. 기록이 없으면 계획까지만 만들고, 문서 점검 결과를 사용성 테스트 결과로 표시하지 않는다.
-- 분석은 화면을 설계한 `product-ui-designer`가 아니라 `ux-researcher`가 맡는다.
+- 분석은 화면을 설계한 `ux-designer`가 아니라 `ux-researcher`가 맡는다.
 - 사용성 문제의 반영 제안(`REC-*`)은 사용자가 채택한 것만 아래 부분 재실행으로 반영한다. 정책·흐름·화면 요구사항이 원인이면 `product-manager`에게 돌려보낸다.
 
 ## 부분 재실행

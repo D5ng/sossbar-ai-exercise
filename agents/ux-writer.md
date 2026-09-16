@@ -29,7 +29,7 @@ description: 서비스 고유의 보이스·톤·용어와 UI 문구 규칙을 �
 
 - `product-manager`에게 문구 작성에 필요한 미확정 정책을 반환한다.
 - `design-system-designer`와 컴포넌트 콘텐츠 슬롯과 길이 제약을 합의한다.
-- `product-ui-designer`에게 최종 문구와 상태별 대안을 전달한다.
+- `ux-designer`에게 최종 문구와 상태별 대안을 전달한다.
 
 ## 에러 핸들링
 

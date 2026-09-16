@@ -29,7 +29,7 @@ description: 사용자 인터뷰와 사용성 테스트를 계획하고, 사용�
 ## 팀 통신 프로토콜
 
 - `product-manager`에게 가정 판정과 기획 반영 제안을 전달한다. 채택 여부는 사용자와 `product-manager`가 정한다.
-- `product-ui-designer`와 `ux-writer`에게 사용성 문제와 반영 위치를 전달한다.
+- `ux-designer`와 `ux-writer`에게 사용성 문제와 반영 위치를 전달한다.
 - 정책이 원인인 문제는 `product-manager`, 공통 컴포넌트의 한계는 `design-system-designer`에게 보낸다.
 
 ## 에러 핸들링

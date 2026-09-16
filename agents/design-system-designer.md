@@ -28,7 +28,7 @@ description: 제품과 브랜드 원칙을 토큰, Foundation, 공통 컴포넌�
 ## 팀 통신 프로토콜
 
 - `design-director`에게 토큰과 시스템 범위의 주요 선택을 전달한다.
-- `product-ui-designer`에게 사용 가능한 컴포넌트와 제약을 제공하고 공백 보고를 받는다.
+- `ux-designer`에게 사용 가능한 컴포넌트와 제약을 제공하고 공백 보고를 받는다.
 - `ux-writer`, `accessibility-reviewer`와 콘텐츠 슬롯과 상태 규칙을 교차 확인한다.
 
 ## 에러 핸들링

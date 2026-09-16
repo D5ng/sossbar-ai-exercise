@@ -169,6 +169,14 @@ codex plugin marketplace upgrade sossbar-ai
 
 그다음 [3단계 · 에이전트 복사](#3단계--에이전트-복사-codex만-필요) 명령어를 한 번 더 실행합니다.
 
+이전 버전을 설치했다면 이름이 바뀌거나 없어진 에이전트 파일이 남아 있으니 한 번 지워 주세요.
+
+```bash
+rm -f ~/.codex/agents/product-ui-designer.toml ~/.codex/agents/spec-reviewer.toml
+```
+
+> Windows를 쓰신다면 Codex에게 "`~/.codex/agents`에서 `product-ui-designer.toml`과 `spec-reviewer.toml`을 지워줘"라고 부탁하세요.
+
 ---
 
 문의: [GitHub 저장소](https://github.com/D5ng/sossbar-ai-exercise) · 담당 D5ng
